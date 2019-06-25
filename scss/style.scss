@@ -1,0 +1,144 @@
+$colors: (
+    primary: #272851,
+    bg: #97D4F1,
+    button: #3F78B0,
+    text: #C6C8E7,
+    items: #43446A,
+    input: #31315C
+);
+
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    ul {
+        list-style: none;
+    }
+}
+
+body {
+    background: color(bg);
+    font-family: Arial, Helvetica, sans-serif;
+    color: color(text);
+}
+
+.container {
+    max-width: 400px;
+    height: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: color(primary);
+
+    header {
+        height: 120px;
+        width: 100%;
+        border-bottom: 1px solid color(items);
+
+        .top-nav {
+            margin-bottom: 2rem;
+        }
+
+        .hamburger-icon {
+            position: relative;
+            height: 20px;
+            width: 25px;
+            cursor: pointer;
+        }
+
+        .line {
+            margin-top: .6rem;
+            background: color(text);
+            width: 25px;
+            height: 1px;
+            position: absolute;
+
+            &:before, &::after {
+                content: '';
+                height: 1px;
+                width: 25px;
+                background: color(text);
+                position: absolute;
+                top: -.5rem;
+            }
+
+            &:after {
+                top: .5rem;
+                width: 25px;
+            }
+        }
+
+        .todo-input {
+            position: relative;
+
+            input {
+                width: 100%;
+                height: 2.5rem;
+                border: none;
+                border-radius: 20px;
+                outline: none;
+                background: color(input);
+                text-indent: 1rem;
+                color: color(text);
+                padding-right: 2.5rem;
+                font-size: 1rem;
+            }
+    
+            button {
+                height: 2rem;
+                width: 2rem;
+                background: color(button);
+                position: absolute;
+                right: .25rem;
+                top: .25rem;
+                border-radius: 1rem;
+                border: none;
+                box-shadow: none;
+                outline: none;
+                cursor: pointer;
+
+                i {
+                    color: color(text);
+                    font-size: 1rem;
+                }
+            }
+        }
+        
+    }
+
+    .todo {
+        position: relative;
+
+        h4 {
+            margin: 1rem 0 1rem 1rem;
+            font-size: 13px;
+        }
+
+        ul {
+            position: relative;
+
+            .items-todo {
+                background: color(items);
+                margin-bottom: .5rem;
+                padding: .9rem .5rem;
+                border-radius: 6px;
+                display: flex;
+                position: relative;
+
+                p {
+                    margin-left: .5rem;
+                }
+    
+                .del {
+                    position: absolute;
+                    right: 1rem;
+                }
+            }
+        }
+    }
+}
