@@ -30,7 +30,7 @@ body {
 
 .container {
     max-width: 400px;
-    height: 600px;
+    min-height: 600px;
     margin: 2rem auto;
     padding: 1rem;
     background: color(primary);
@@ -136,6 +136,11 @@ body {
 
                 p {
                     margin-left: .5rem;
+
+                    &.line-through {
+                        text-decoration: line-through;
+                        color: rgb(146, 141, 141);
+                    }
                 }
     
                 .del {
@@ -146,10 +151,6 @@ body {
                     &:hover {
                         color: rgb(197, 46, 46);
                     }
-                }
-
-                &.completed {
-                    margin-top: 10rem;
                 }
             }
         }

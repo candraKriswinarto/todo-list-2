@@ -15,7 +15,7 @@ body {
 
 .container {
   max-width: 400px;
-  height: 600px;
+  min-height: 600px;
   margin: 2rem auto;
   padding: 1rem;
   background: #272851;
@@ -109,6 +109,10 @@ body {
 .container .todo ul .items-todo p, .container .todo ul .completed p {
   margin-left: 0.5rem;
 }
+.container .todo ul .items-todo p.line-through, .container .todo ul .completed p.line-through {
+  text-decoration: line-through;
+  color: #928d8d;
+}
 .container .todo ul .items-todo .del, .container .todo ul .completed .del {
   position: absolute;
   right: 1rem;
@@ -116,9 +120,6 @@ body {
 }
 .container .todo ul .items-todo .del:hover, .container .todo ul .completed .del:hover {
   color: #c52e2e;
-}
-.container .todo ul .items-todo.completed, .container .todo ul .completed.completed {
-  margin-top: 10rem;
 }
 
 /*# sourceMappingURL=style.css.map */
