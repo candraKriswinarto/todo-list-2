@@ -122,13 +122,17 @@ body {
         ul {
             position: relative;
 
-            .items-todo {
+            .items-todo, .completed {
                 background: color(items);
-                margin-bottom: .5rem;
+                margin: .8rem 0;
                 padding: .9rem .5rem;
                 border-radius: 6px;
                 display: flex;
                 position: relative;
+
+                .co {
+                    cursor: pointer;
+                }
 
                 p {
                     margin-left: .5rem;
@@ -137,6 +141,15 @@ body {
                 .del {
                     position: absolute;
                     right: 1rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: rgb(197, 46, 46);
+                    }
+                }
+
+                &.completed {
+                    margin-top: 10rem;
                 }
             }
         }
